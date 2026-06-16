@@ -1,0 +1,17 @@
+# NAME: WMLIA
+# TYPE: Quantumult X filter rules
+# UPDATED: 2026-06-16
+# POLICY: direct
+# NOTE: Direct rules for https://www.wmlia.com/ and observed related whitelist domains.
+# NOTE: HOST-SUFFIX,wmlia.com covers wmlia.com, www.wmlia.com and all *.wmlia.com subdomains.
+# NOTE: Related domains below should be kept only if they are observed in Quantumult X logs while using WMLIA.
+
+# WMLIA main site
+HOST-SUFFIX,wmlia.com,direct
+
+# WMLIA observed / related whitelist domains
+HOST-SUFFIX,idscraper.com,direct
+HOST-SUFFIX,yczy5.com,direct
+HOST-SUFFIX,moduzytuuu.com,direct
+HOST-SUFFIX,viptulz.com,direct
+HOST-SUFFIX,baofeng10.com,direct
