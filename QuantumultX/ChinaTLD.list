@@ -1,0 +1,7 @@
+# NAME: ChinaTLD
+# TYPE: Quantumult X filter rules
+# UPDATED: 2026-06-16
+# POLICY: direct
+# NOTE: Lightweight fallback for .cn domains. Keep it before any global domain catch-all rule.
+
+HOST-SUFFIX,cn,direct
