@@ -1,0 +1,9 @@
+# NAME: ClaudeCode
+# TYPE: Quantumult X filter rules
+# UPDATED: 2026-06-16
+# POLICY: AI
+# NOTE: Supplement for Claude Code endpoints not always covered by generic Anthropic rules.
+
+HOST,platform.claude.com,AI
+HOST-SUFFIX,claudeusercontent.com,AI
+HOST,storage.googleapis.com,AI
