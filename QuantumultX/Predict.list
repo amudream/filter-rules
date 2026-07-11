@@ -1,0 +1,14 @@
+# NAME: Predict
+# TYPE: Quantumult X filter rules
+# UPDATED: 2026-07-11
+# POLICY: PROXY
+# NOTE: If your policy group is not named PROXY, replace the last field with your own policy group name.
+
+# Predict main domain, API and WebSocket
+HOST-SUFFIX,predict.fun,PROXY
+
+# WalletConnect relay used by Predict wallet connection
+HOST,relay.walletconnect.org,PROXY
+
+# Ethereum RPC endpoint observed in Predict traffic
+HOST,eth.llamarpc.com,PROXY
