@@ -5,7 +5,20 @@
 # NOTE: Load this resource before broad direct/CN resources and use force-policy with a UDP-capable proxy.
 # NOTE: Chrome should still use WebRtcIPHandling=disable_non_proxied_udp as the final browser-side safeguard.
 
-# STUN hostnames commonly include "stun"; this also covers numbered names such as stun1.l.google.com.
+# Exact overrides for STUN hosts that are also covered by broad direct-domain resources.
+HOST,stun.voip.blackberry.com,PROXY
+HOST,stun.chat.bilibili.com,PROXY
+
+# Popular public endpoints are explicit so exact-host matching wins over any suffix resource.
+HOST,stun.cloudflare.com,PROXY
+HOST,global.stun.twilio.com,PROXY
+HOST,stun.l.google.com,PROXY
+HOST,stun1.l.google.com,PROXY
+HOST,stun2.l.google.com,PROXY
+HOST,stun3.l.google.com,PROXY
+HOST,stun4.l.google.com,PROXY
+
+# STUN hostnames commonly include "stun"; this catches additional and newly introduced endpoints.
 HOST-KEYWORD,stun,PROXY
 
 # TURN/TURNS labels can appear at the first or an inner hostname label.
