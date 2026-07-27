@@ -1,0 +1,18 @@
+# NAME: WebRTC-Protect
+# TYPE: Quantumult X filter rules
+# UPDATED: 2026-07-27
+# POLICY: PROXY
+# NOTE: Load this resource before broad direct/CN resources and use force-policy with a UDP-capable proxy.
+# NOTE: Chrome should still use WebRtcIPHandling=disable_non_proxied_udp as the final browser-side safeguard.
+
+# STUN hostnames commonly include "stun"; this also covers numbered names such as stun1.l.google.com.
+HOST-KEYWORD,stun,PROXY
+
+# TURN/TURNS labels can appear at the first or an inner hostname label.
+HOST-WILDCARD,turn.*,PROXY
+HOST-WILDCARD,*.turn.*,PROXY
+HOST-WILDCARD,turns.*,PROXY
+HOST-WILDCARD,*.turns.*,PROXY
+
+# Relays whose hostnames do not contain a STUN/TURN label.
+HOST,relay.webwormhole.io,PROXY
