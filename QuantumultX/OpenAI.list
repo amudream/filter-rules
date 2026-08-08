@@ -1,0 +1,33 @@
+# OpenAI / ChatGPT / Codex / Sora -> Philippines
+# Quantumult X v17 zero-leak-priority local rules
+
+HOST-SUFFIX,openai.com,OpenAI
+HOST-SUFFIX,chatgpt.com,OpenAI
+HOST-SUFFIX,oaistatic.com,OpenAI
+HOST-SUFFIX,oaiusercontent.com,OpenAI
+HOST-SUFFIX,oaistatsig.com,OpenAI
+HOST-SUFFIX,openaimerge.com,OpenAI
+HOST-SUFFIX,sora.com,OpenAI
+HOST-KEYWORD,openai,OpenAI
+HOST-KEYWORD,chatgpt,OpenAI
+
+HOST-SUFFIX,ct.sendgrid.net,OpenAI
+HOST-SUFFIX,intercom.io,OpenAI
+HOST-SUFFIX,intercomcdn.com,OpenAI
+HOST,cdn.workos.com,OpenAI
+HOST,forwarder.workos.com,OpenAI
+HOST,setup.workos.com,OpenAI
+HOST,images.workoscdn.com,OpenAI
+HOST,workos.imgix.net,OpenAI
+HOST,challenges.cloudflare.com,OpenAI
+HOST,rum.browser-intake-datadoghq.com,OpenAI
+HOST,humb.apple.com,OpenAI
+
+HOST-WILDCARD,o207216.ingest*.sentry.io,OpenAI
+HOST-WILDCARD,o33249.ingest*.sentry.io,OpenAI
+
+HOST-SUFFIX,stripe.com,OpenAI
+HOST-SUFFIX,stripe.network,OpenAI
+HOST-SUFFIX,stripecdn.com,OpenAI
+HOST-SUFFIX,link.com,OpenAI
+HOST-SUFFIX,hcaptcha.com,OpenAI
