@@ -1,0 +1,6 @@
+# GENERATED FILE - DO NOT EDIT
+# Source: source/ChinaTLD.yaml
+# Suggested target: DIRECT
+# Use as a Mihomo rule-provider with behavior: classical.
+payload:
+  - 'DOMAIN-SUFFIX,cn'

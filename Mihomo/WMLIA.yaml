@@ -1,0 +1,11 @@
+# GENERATED FILE - DO NOT EDIT
+# Source: source/WMLIA.yaml
+# Suggested target: DIRECT
+# Use as a Mihomo rule-provider with behavior: classical.
+payload:
+  - 'DOMAIN-SUFFIX,wmlia.com'
+  - 'DOMAIN-SUFFIX,idscraper.com'
+  - 'DOMAIN-SUFFIX,yczy5.com'
+  - 'DOMAIN-SUFFIX,moduzytuuu.com'
+  - 'DOMAIN-SUFFIX,viptulz.com'
+  - 'DOMAIN-SUFFIX,baofeng10.com'

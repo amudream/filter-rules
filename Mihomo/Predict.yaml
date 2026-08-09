@@ -1,0 +1,8 @@
+# GENERATED FILE - DO NOT EDIT
+# Source: source/Predict.yaml
+# Suggested target: Personal
+# Use as a Mihomo rule-provider with behavior: classical.
+payload:
+  - 'DOMAIN-SUFFIX,predict.fun'
+  - 'DOMAIN,relay.walletconnect.org'
+  - 'DOMAIN,eth.llamarpc.com'

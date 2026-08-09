@@ -1,0 +1,8 @@
+# GENERATED FILE - DO NOT EDIT
+# Source: source/ClaudeCode.yaml
+# Suggested target: Personal
+# Use as a Mihomo rule-provider with behavior: classical.
+payload:
+  - 'DOMAIN,platform.claude.com'
+  - 'DOMAIN-SUFFIX,claudeusercontent.com'
+  - 'DOMAIN,storage.googleapis.com'

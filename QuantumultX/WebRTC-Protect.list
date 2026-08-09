@@ -1,31 +1,20 @@
-# NAME: WebRTC-Protect
-# TYPE: Quantumult X filter rules
-# UPDATED: 2026-07-27
-# POLICY: PROXY
-# NOTE: Load this resource before broad direct/CN resources and use force-policy with a UDP-capable proxy.
-# NOTE: Chrome should still use WebRtcIPHandling=disable_non_proxied_udp as the final browser-side safeguard.
+# GENERATED FILE - DO NOT EDIT
+# Source: source/WebRTC-Protect.yaml
+# Target: Personal
+# Edit source/ and let GitHub Actions rebuild this file.
 
-# Exact overrides for STUN hosts that are also covered by broad direct-domain resources.
-HOST,stun.voip.blackberry.com,PROXY
-HOST,stun.chat.bilibili.com,PROXY
-
-# Popular public endpoints are explicit so exact-host matching wins over any suffix resource.
-HOST,stun.cloudflare.com,PROXY
-HOST,global.stun.twilio.com,PROXY
-HOST,stun.l.google.com,PROXY
-HOST,stun1.l.google.com,PROXY
-HOST,stun2.l.google.com,PROXY
-HOST,stun3.l.google.com,PROXY
-HOST,stun4.l.google.com,PROXY
-
-# STUN hostnames commonly include "stun"; this catches additional and newly introduced endpoints.
-HOST-KEYWORD,stun,PROXY
-
-# TURN/TURNS labels can appear at the first or an inner hostname label.
-HOST-WILDCARD,turn.*,PROXY
-HOST-WILDCARD,*.turn.*,PROXY
-HOST-WILDCARD,turns.*,PROXY
-HOST-WILDCARD,*.turns.*,PROXY
-
-# Relays whose hostnames do not contain a STUN/TURN label.
-HOST,relay.webwormhole.io,PROXY
+HOST,stun.voip.blackberry.com,Personal
+HOST,stun.chat.bilibili.com,Personal
+HOST,stun.cloudflare.com,Personal
+HOST,global.stun.twilio.com,Personal
+HOST,stun.l.google.com,Personal
+HOST,stun1.l.google.com,Personal
+HOST,stun2.l.google.com,Personal
+HOST,stun3.l.google.com,Personal
+HOST,stun4.l.google.com,Personal
+HOST-KEYWORD,stun,Personal
+HOST-WILDCARD,turn.*,Personal
+HOST-WILDCARD,*.turn.*,Personal
+HOST-WILDCARD,turns.*,Personal
+HOST-WILDCARD,*.turns.*,Personal
+HOST,relay.webwormhole.io,Personal

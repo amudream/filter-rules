@@ -1,65 +1,51 @@
-# NAME: Binance
-# TYPE: Quantumult X filter rules
-# UPDATED: 2026-06-16
-# POLICY: PROXY
-# NOTE: If your policy group is not named PROXY, replace the last field with your own policy group name.
+# GENERATED FILE - DO NOT EDIT
+# Source: source/Binance.yaml
+# Target: Personal
+# Edit source/ and let GitHub Actions rebuild this file.
 
-# Binance main domains
-HOST-SUFFIX,binance.com,PROXY
-HOST-SUFFIX,binance.info,PROXY
-HOST-SUFFIX,binance.me,PROXY
-HOST-SUFFIX,binance.click,PROXY
-HOST-SUFFIX,binance.charity,PROXY
-HOST-KEYWORD,binance,PROXY
-
-# Binance CDN / static resources
-HOST-SUFFIX,bnbstatic.com,PROXY
-HOST-SUFFIX,bscdnweb.com,PROXY
-HOST-SUFFIX,bntrace.com,PROXY
-
-# Binance App API / backend domains
-HOST-SUFFIX,saasexch.io,PROXY
-HOST-SUFFIX,saasexch.info,PROXY
-HOST-SUFFIX,bsappapi.com,PROXY
-HOST-SUFFIX,bsappapi.cc,PROXY
-HOST-SUFFIX,bsappapi.cn,PROXY
-HOST-SUFFIX,servicesbinance.com,PROXY
-
-# Binance App fallback / WebView domains observed in traffic
-HOST-SUFFIX,mokexapp.me,PROXY
-HOST-SUFFIX,mokexapp.tv,PROXY
-HOST-SUFFIX,mokexapp.io,PROXY
-HOST-SUFFIX,mokexapp.net,PROXY
-HOST-SUFFIX,mokexapp.org,PROXY
-HOST-SUFFIX,mokexapp.co,PROXY
-HOST-SUFFIX,mokexapp.cloud,PROXY
-HOST-SUFFIX,mokexapp.club,PROXY
-HOST-SUFFIX,mokexapp.us,PROXY
-HOST-SUFFIX,mokexapp.info,PROXY
-HOST-SUFFIX,mokexapp.cz,PROXY
-
-# Binance WebView fallback domains
-HOST-SUFFIX,bnappweb.black,PROXY
-HOST-SUFFIX,bnappweb.academy,PROXY
-HOST-SUFFIX,bnappweb.biz,PROXY
-HOST-SUFFIX,bnappweb.blue,PROXY
-HOST-SUFFIX,bnappweb.cc,PROXY
-HOST-SUFFIX,bnappweb.club,PROXY
-HOST-SUFFIX,bnappweb.co,PROXY
-
-# Binance WebView suffix domains
-HOST-SUFFIX,binancewv.co,PROXY
-HOST-SUFFIX,binancewv.mobi,PROXY
-HOST-SUFFIX,binancewv.ninja,PROXY
-HOST-SUFFIX,binancewv.club,PROXY
-HOST-SUFFIX,binancewv.link,PROXY
-HOST-SUFFIX,binancewv.biz,PROXY
-HOST-SUFFIX,binancewv.info,PROXY
-HOST-SUFFIX,binancewv.net,PROXY
-
-# Related domains observed in Binance traffic
-HOST-SUFFIX,sintral.io,PROXY
-HOST-SUFFIX,sintral.me,PROXY
-HOST-SUFFIX,asterapp.me,PROXY
-HOST-SUFFIX,liquidmesh.net,PROXY
-HOST-SUFFIX,1stdigital.com,PROXY
+HOST-SUFFIX,binance.com,Personal
+HOST-SUFFIX,binance.info,Personal
+HOST-SUFFIX,binance.me,Personal
+HOST-SUFFIX,binance.click,Personal
+HOST-SUFFIX,binance.charity,Personal
+HOST-SUFFIX,bnbstatic.com,Personal
+HOST-SUFFIX,bscdnweb.com,Personal
+HOST-SUFFIX,bntrace.com,Personal
+HOST-SUFFIX,saasexch.io,Personal
+HOST-SUFFIX,saasexch.info,Personal
+HOST-SUFFIX,bsappapi.com,Personal
+HOST-SUFFIX,bsappapi.cc,Personal
+HOST-SUFFIX,bsappapi.cn,Personal
+HOST-SUFFIX,servicesbinance.com,Personal
+HOST-SUFFIX,mokexapp.me,Personal
+HOST-SUFFIX,mokexapp.tv,Personal
+HOST-SUFFIX,mokexapp.io,Personal
+HOST-SUFFIX,mokexapp.net,Personal
+HOST-SUFFIX,mokexapp.org,Personal
+HOST-SUFFIX,mokexapp.co,Personal
+HOST-SUFFIX,mokexapp.cloud,Personal
+HOST-SUFFIX,mokexapp.club,Personal
+HOST-SUFFIX,mokexapp.us,Personal
+HOST-SUFFIX,mokexapp.info,Personal
+HOST-SUFFIX,mokexapp.cz,Personal
+HOST-SUFFIX,bnappweb.black,Personal
+HOST-SUFFIX,bnappweb.academy,Personal
+HOST-SUFFIX,bnappweb.biz,Personal
+HOST-SUFFIX,bnappweb.blue,Personal
+HOST-SUFFIX,bnappweb.cc,Personal
+HOST-SUFFIX,bnappweb.club,Personal
+HOST-SUFFIX,bnappweb.co,Personal
+HOST-SUFFIX,binancewv.co,Personal
+HOST-SUFFIX,binancewv.mobi,Personal
+HOST-SUFFIX,binancewv.ninja,Personal
+HOST-SUFFIX,binancewv.club,Personal
+HOST-SUFFIX,binancewv.link,Personal
+HOST-SUFFIX,binancewv.biz,Personal
+HOST-SUFFIX,binancewv.info,Personal
+HOST-SUFFIX,binancewv.net,Personal
+HOST-SUFFIX,sintral.io,Personal
+HOST-SUFFIX,sintral.me,Personal
+HOST-SUFFIX,asterapp.me,Personal
+HOST-SUFFIX,liquidmesh.net,Personal
+HOST-SUFFIX,1stdigital.com,Personal
+HOST-KEYWORD,binance,Personal

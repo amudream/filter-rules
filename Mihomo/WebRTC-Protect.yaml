@@ -1,0 +1,20 @@
+# GENERATED FILE - DO NOT EDIT
+# Source: source/WebRTC-Protect.yaml
+# Suggested target: Personal
+# Use as a Mihomo rule-provider with behavior: classical.
+payload:
+  - 'DOMAIN,stun.voip.blackberry.com'
+  - 'DOMAIN,stun.chat.bilibili.com'
+  - 'DOMAIN,stun.cloudflare.com'
+  - 'DOMAIN,global.stun.twilio.com'
+  - 'DOMAIN,stun.l.google.com'
+  - 'DOMAIN,stun1.l.google.com'
+  - 'DOMAIN,stun2.l.google.com'
+  - 'DOMAIN,stun3.l.google.com'
+  - 'DOMAIN,stun4.l.google.com'
+  - 'DOMAIN-KEYWORD,stun'
+  - 'DOMAIN-WILDCARD,turn.*'
+  - 'DOMAIN-WILDCARD,*.turn.*'
+  - 'DOMAIN-WILDCARD,turns.*'
+  - 'DOMAIN-WILDCARD,*.turns.*'
+  - 'DOMAIN,relay.webwormhole.io'

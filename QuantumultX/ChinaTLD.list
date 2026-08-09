@@ -1,7 +1,6 @@
-# NAME: ChinaTLD
-# TYPE: Quantumult X filter rules
-# UPDATED: 2026-06-16
-# POLICY: direct
-# NOTE: Lightweight fallback for .cn domains. Keep it before any global domain catch-all rule.
+# GENERATED FILE - DO NOT EDIT
+# Source: source/ChinaTLD.yaml
+# Target: DIRECT
+# Edit source/ and let GitHub Actions rebuild this file.
 
 HOST-SUFFIX,cn,direct
