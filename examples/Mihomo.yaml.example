@@ -21,7 +21,7 @@ proxy-groups:
   - name: Personal
     type: select
     use: [personal]
-    exclude-filter: "^OPENAI-PH-"
+    filter: "^PERSONAL-"
 
 rule-providers:
   OpenAI:

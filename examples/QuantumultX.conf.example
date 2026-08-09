@@ -1,10 +1,9 @@
 # Example only. No private subscriptions or credentials are stored here.
 
 [policy]
-# Replace OPENAI-PH-01 with your own Philippines node tag.
-static=OpenAI, OPENAI-PH-01
-# Personal should select only your own normal nodes.
-static=Personal, resource-tag-regex=^个人服务器$
+# One private subscription contains both dedicated OpenAI and normal personal nodes.
+static=OpenAI, resource-tag-regex=^个人服务器$, server-tag-regex=^OPENAI-PH-
+static=Personal, resource-tag-regex=^个人服务器$, server-tag-regex=^PERSONAL-
 
 [filter_remote]
 # OpenAI first: Philippines

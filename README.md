@@ -43,7 +43,7 @@ PERSONAL-VLESS-01
 客户端按名称筛选：
 
 - `OpenAI` 组只选 `^OPENAI-PH-`
-- `Personal` 组排除 `^OPENAI-PH-`
+- `Personal` 组只选 `^PERSONAL-`
 
 这样换服务器只改私有订阅；改分流只改这个 GitHub 仓库。
 
