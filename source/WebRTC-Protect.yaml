@@ -1,0 +1,34 @@
+name: WebRTC-Protect
+target: Personal
+description: "STUN/TURN/WebRTC relay protection. Put before broad DIRECT/CN rules."
+rules:
+  - type: domain
+    value: "stun.voip.blackberry.com"
+  - type: domain
+    value: "stun.chat.bilibili.com"
+  - type: domain
+    value: "stun.cloudflare.com"
+  - type: domain
+    value: "global.stun.twilio.com"
+  - type: domain
+    value: "stun.l.google.com"
+  - type: domain
+    value: "stun1.l.google.com"
+  - type: domain
+    value: "stun2.l.google.com"
+  - type: domain
+    value: "stun3.l.google.com"
+  - type: domain
+    value: "stun4.l.google.com"
+  - type: domain-keyword
+    value: "stun"
+  - type: domain-wildcard
+    value: "turn.*"
+  - type: domain-wildcard
+    value: "*.turn.*"
+  - type: domain-wildcard
+    value: "turns.*"
+  - type: domain-wildcard
+    value: "*.turns.*"
+  - type: domain
+    value: "relay.webwormhole.io"

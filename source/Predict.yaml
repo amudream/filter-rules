@@ -1,0 +1,10 @@
+name: Predict
+target: Personal
+description: "Predict.fun app/API plus observed WalletConnect and Ethereum RPC dependencies."
+rules:
+  - type: domain-suffix
+    value: "predict.fun"
+  - type: domain
+    value: "relay.walletconnect.org"
+  - type: domain
+    value: "eth.llamarpc.com"

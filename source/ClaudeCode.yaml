@@ -1,0 +1,10 @@
+name: ClaudeCode
+target: Personal
+description: "Claude Code supplement endpoints. General non-OpenAI traffic still falls back to Personal."
+rules:
+  - type: domain
+    value: "platform.claude.com"
+  - type: domain-suffix
+    value: "claudeusercontent.com"
+  - type: domain
+    value: "storage.googleapis.com"

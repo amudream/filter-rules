@@ -1,0 +1,32 @@
+# Example only. No private subscriptions or credentials are stored here.
+
+[policy]
+# Replace OPENAI-PH-01 with your own Philippines node tag.
+static=OpenAI, OPENAI-PH-01
+# Personal should select only your own normal nodes.
+static=Personal, resource-tag-regex=^个人服务器$
+
+[filter_remote]
+# OpenAI first: Philippines
+https://raw.githubusercontent.com/amudream/filter-rules/main/QuantumultX/OpenAI.list, tag=OpenAI, force-policy=OpenAI, update-interval=86400, opt-parser=false, inserted-resource=true, enabled=true
+
+# WebRTC before broad DIRECT/CN resources
+https://raw.githubusercontent.com/amudream/filter-rules/main/QuantumultX/WebRTC-Protect.list, tag=WebRTC-Protect, force-policy=Personal, update-interval=86400, opt-parser=false, inserted-resource=true, enabled=true
+
+# Public upstreams reused directly
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Lan/Lan.list, tag=Lan, force-policy=direct, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list, tag=Apple, force-policy=direct, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/quantumultx/cn.list, tag=CN, force-policy=direct, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/amudream/filter-rules/main/QuantumultX/ChinaTLD.list, tag=ChinaTLD, force-policy=direct, update-interval=86400, opt-parser=false, inserted-resource=true, enabled=true
+
+# Optional self-maintained categories; all go to Personal.
+https://raw.githubusercontent.com/amudream/filter-rules/main/QuantumultX/Binance.list, tag=Binance, force-policy=Personal, update-interval=86400, opt-parser=false, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/amudream/filter-rules/main/QuantumultX/Predict.list, tag=Predict, force-policy=Personal, update-interval=86400, opt-parser=false, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/amudream/filter-rules/main/QuantumultX/ClaudeCode.list, tag=ClaudeCode, force-policy=Personal, update-interval=86400, opt-parser=false, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/amudream/filter-rules/main/QuantumultX/WMLIA.list, tag=WMLIA, force-policy=direct, update-interval=86400, opt-parser=false, inserted-resource=true, enabled=true
+
+[filter_local]
+# Everything else overseas -> Personal
+HOST-KEYWORD,.,Personal
+GEOIP,CN,direct
+FINAL,Personal

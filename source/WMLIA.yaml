@@ -1,0 +1,16 @@
+name: WMLIA
+target: DIRECT
+description: "WMLIA direct/whitelist domains observed in use."
+rules:
+  - type: domain-suffix
+    value: "wmlia.com"
+  - type: domain-suffix
+    value: "idscraper.com"
+  - type: domain-suffix
+    value: "yczy5.com"
+  - type: domain-suffix
+    value: "moduzytuuu.com"
+  - type: domain-suffix
+    value: "viptulz.com"
+  - type: domain-suffix
+    value: "baofeng10.com"

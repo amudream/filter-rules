@@ -1,0 +1,82 @@
+# Example only. Keep the real subscription URL private.
+# Node naming convention:
+#   OPENAI-PH-* = Philippines nodes dedicated to OpenAI
+#   PERSONAL-*  = normal personal nodes
+
+mode: rule
+
+proxy-providers:
+  personal:
+    type: http
+    url: "https://YOUR-PRIVATE-SUBSCRIPTION"
+    path: ./proxy_providers/personal.yaml
+    interval: 86400
+
+proxy-groups:
+  - name: OpenAI
+    type: select
+    use: [personal]
+    filter: "^OPENAI-PH-"
+
+  - name: Personal
+    type: select
+    use: [personal]
+    exclude-filter: "^OPENAI-PH-"
+
+rule-providers:
+  OpenAI:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/amudream/filter-rules/main/Mihomo/OpenAI.yaml
+    path: ./rule_providers/OpenAI.yaml
+    interval: 86400
+  WebRTC-Protect:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/amudream/filter-rules/main/Mihomo/WebRTC-Protect.yaml
+    path: ./rule_providers/WebRTC-Protect.yaml
+    interval: 86400
+  ChinaTLD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/amudream/filter-rules/main/Mihomo/ChinaTLD.yaml
+    path: ./rule_providers/ChinaTLD.yaml
+    interval: 86400
+  WMLIA:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/amudream/filter-rules/main/Mihomo/WMLIA.yaml
+    path: ./rule_providers/WMLIA.yaml
+    interval: 86400
+  Binance:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/amudream/filter-rules/main/Mihomo/Binance.yaml
+    path: ./rule_providers/Binance.yaml
+    interval: 86400
+  Predict:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/amudream/filter-rules/main/Mihomo/Predict.yaml
+    path: ./rule_providers/Predict.yaml
+    interval: 86400
+  ClaudeCode:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/amudream/filter-rules/main/Mihomo/ClaudeCode.yaml
+    path: ./rule_providers/ClaudeCode.yaml
+    interval: 86400
+
+rules:
+  # OpenAI must be before Apple/CN.
+  - RULE-SET,OpenAI,OpenAI
+  - RULE-SET,WebRTC-Protect,Personal
+  - RULE-SET,WMLIA,DIRECT
+  - RULE-SET,Binance,Personal
+  - RULE-SET,Predict,Personal
+  - RULE-SET,ClaudeCode,Personal
+  - GEOSITE,apple,DIRECT
+  - RULE-SET,ChinaTLD,DIRECT
+  - GEOSITE,cn,DIRECT
+  - GEOIP,CN,DIRECT,no-resolve
+  - MATCH,Personal

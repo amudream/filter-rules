@@ -1,62 +1,73 @@
 # filter-rules
 
-个人分流规则仓库。
+个人跨端分流规则项目。**GitHub 只管规则，私有订阅只管节点。**
 
-## Quantumult X
-
-### Binance / 币安
-
-规则文件：
+## 最终分流目标
 
 ```text
-https://raw.githubusercontent.com/amudream/filter-rules/main/QuantumultX/Binance.list
+OpenAI / ChatGPT / Codex / Sora / OpenAI 支付
+                        -> OpenAI -> 菲律宾节点
+
+Apple / LAN / 中国大陆 -> DIRECT
+
+其他所有需要代理的流量
+                        -> Personal -> 自己的普通节点
 ```
 
-QX 配置示例：
-
-```ini
-[filter_remote]
-https://raw.githubusercontent.com/amudream/filter-rules/main/QuantumultX/Binance.list, tag=Binance, update-interval=86400, opt-parser=false, enabled=true
-```
-
-### Predict
-
-规则文件：
+## 目录
 
 ```text
-https://raw.githubusercontent.com/amudream/filter-rules/main/QuantumultX/Predict.list
+source/        自维护规则的唯一真源，只改这里
+QuantumultX/   自动生成的 Quantumult X 规则
+Mihomo/        自动生成的 Clash Verge Rev / Mihomo 规则
+examples/      无密钥客户端示例
+scripts/       规则生成器
+UPSTREAMS.md   直接复用的成熟公共规则
 ```
 
-QX 配置示例：
+`QuantumultX/` 和 `Mihomo/` **不要手改**。修改 `source/*.yaml` 后，GitHub Actions 会自动重新生成两端规则。
 
-```ini
-[filter_remote]
-https://raw.githubusercontent.com/amudream/filter-rules/main/QuantumultX/Predict.list, tag=Predict, update-interval=86400, opt-parser=false, enabled=true
-```
+## 节点层与规则层分离
 
-当前规则覆盖：
+公开仓库不保存任何节点、订阅 token、UUID、Reality key 或 MITM 证书。
 
-- `predict.fun` 主站、API 和 WebSocket
-- `relay.walletconnect.org` 钱包连接中继
-- `eth.llamarpc.com` Ethereum RPC
-
-默认策略名使用 `PROXY`。如果你的 Quantumult X 配置里没有名为 `PROXY` 的策略组，需要把规则文件最后一列的 `PROXY` 改成你自己的策略组名，例如 `节点选择`、`🚀 节点选择`、`Proxy`。
-
-建议把这些规则放在 `GEOIP,CN,DIRECT` 和 `FINAL` 之前，否则可能不生效。
-
-### WebRTC / STUN 防直连
-
-规则文件：
+建议私有订阅内统一命名：
 
 ```text
-https://raw.githubusercontent.com/amudream/filter-rules/main/QuantumultX/WebRTC-Protect.list
+OPENAI-PH-01
+OPENAI-PH-02
+PERSONAL-ANYTLS-01
+PERSONAL-VLESS-01
 ```
 
-QX 配置示例：
+客户端按名称筛选：
 
-```ini
-[filter_remote]
-https://raw.githubusercontent.com/amudream/filter-rules/main/QuantumultX/WebRTC-Protect.list, tag=WebRTC-Protect, force-policy=Global, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=true
-```
+- `OpenAI` 组只选 `^OPENAI-PH-`
+- `Personal` 组排除 `^OPENAI-PH-`
 
-这条远程资源必须放在 `ChinaMax` 等宽泛直连资源之前，并指向支持 UDP 的代理策略。浏览器端仍建议启用 Chrome 的 `WebRtcIPHandling=disable_non_proxied_udp` 作为最终防线。
+这样换服务器只改私有订阅；改分流只改这个 GitHub 仓库。
+
+## 自维护规则
+
+| 规则 | 默认目标 | QX | Mihomo |
+|---|---|---|---|
+| OpenAI | OpenAI / 菲律宾 | `QuantumultX/OpenAI.list` | `Mihomo/OpenAI.yaml` |
+| WebRTC-Protect | Personal | `QuantumultX/WebRTC-Protect.list` | `Mihomo/WebRTC-Protect.yaml` |
+| Binance | Personal | `QuantumultX/Binance.list` | `Mihomo/Binance.yaml` |
+| Predict | Personal | `QuantumultX/Predict.list` | `Mihomo/Predict.yaml` |
+| ClaudeCode | Personal | `QuantumultX/ClaudeCode.list` | `Mihomo/ClaudeCode.yaml` |
+| WMLIA | DIRECT | `QuantumultX/WMLIA.list` | `Mihomo/WMLIA.yaml` |
+| ChinaTLD | DIRECT | `QuantumultX/ChinaTLD.list` | `Mihomo/ChinaTLD.yaml` |
+
+OpenAI 规则包含 OpenAI 自有域名、ChatGPT/Codex/Sora、实际观察到的区域化 Sentry endpoint，以及 Stripe/Link 等支付链路；它必须排在 Apple 和 CN 直连规则之前。
+
+## 直接复用上游
+
+Apple、LAN、中国大陆主规则不复制维护，见 [`UPSTREAMS.md`](UPSTREAMS.md)。
+
+## 客户端示例
+
+- Quantumult X：`examples/QuantumultX.conf.example`
+- Clash Verge Rev / Mihomo：`examples/Mihomo.yaml.example`
+
+示例中没有真实订阅或节点凭证。

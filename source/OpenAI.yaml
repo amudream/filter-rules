@@ -1,0 +1,58 @@
+name: OpenAI
+target: OpenAI
+description: "OpenAI / ChatGPT / Codex / Sora and OpenAI web payment dependencies."
+rules:
+  - type: domain-suffix
+    value: "openai.com"
+  - type: domain-suffix
+    value: "chatgpt.com"
+  - type: domain-suffix
+    value: "oaistatic.com"
+  - type: domain-suffix
+    value: "oaiusercontent.com"
+  - type: domain-suffix
+    value: "oaistatsig.com"
+  - type: domain-suffix
+    value: "openaimerge.com"
+  - type: domain-suffix
+    value: "sora.com"
+  - type: domain-keyword
+    value: "openai"
+  - type: domain-keyword
+    value: "chatgpt"
+  - type: domain-suffix
+    value: "ct.sendgrid.net"
+  - type: domain-suffix
+    value: "intercom.io"
+  - type: domain-suffix
+    value: "intercomcdn.com"
+  - type: domain
+    value: "cdn.workos.com"
+  - type: domain
+    value: "forwarder.workos.com"
+  - type: domain
+    value: "setup.workos.com"
+  - type: domain
+    value: "images.workoscdn.com"
+  - type: domain
+    value: "workos.imgix.net"
+  - type: domain
+    value: "challenges.cloudflare.com"
+  - type: domain
+    value: "rum.browser-intake-datadoghq.com"
+  - type: domain
+    value: "humb.apple.com"
+  - type: domain-wildcard
+    value: "o207216.ingest*.sentry.io"
+  - type: domain-wildcard
+    value: "o33249.ingest*.sentry.io"
+  - type: domain-suffix
+    value: "stripe.com"
+  - type: domain-suffix
+    value: "stripe.network"
+  - type: domain-suffix
+    value: "stripecdn.com"
+  - type: domain-suffix
+    value: "link.com"
+  - type: domain-suffix
+    value: "hcaptcha.com"

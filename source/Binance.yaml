@@ -1,0 +1,96 @@
+name: Binance
+target: Personal
+description: "Binance domains observed in web/app traffic."
+rules:
+  - type: domain-suffix
+    value: "binance.com"
+  - type: domain-suffix
+    value: "binance.info"
+  - type: domain-suffix
+    value: "binance.me"
+  - type: domain-suffix
+    value: "binance.click"
+  - type: domain-suffix
+    value: "binance.charity"
+  - type: domain-suffix
+    value: "bnbstatic.com"
+  - type: domain-suffix
+    value: "bscdnweb.com"
+  - type: domain-suffix
+    value: "bntrace.com"
+  - type: domain-suffix
+    value: "saasexch.io"
+  - type: domain-suffix
+    value: "saasexch.info"
+  - type: domain-suffix
+    value: "bsappapi.com"
+  - type: domain-suffix
+    value: "bsappapi.cc"
+  - type: domain-suffix
+    value: "bsappapi.cn"
+  - type: domain-suffix
+    value: "servicesbinance.com"
+  - type: domain-suffix
+    value: "mokexapp.me"
+  - type: domain-suffix
+    value: "mokexapp.tv"
+  - type: domain-suffix
+    value: "mokexapp.io"
+  - type: domain-suffix
+    value: "mokexapp.net"
+  - type: domain-suffix
+    value: "mokexapp.org"
+  - type: domain-suffix
+    value: "mokexapp.co"
+  - type: domain-suffix
+    value: "mokexapp.cloud"
+  - type: domain-suffix
+    value: "mokexapp.club"
+  - type: domain-suffix
+    value: "mokexapp.us"
+  - type: domain-suffix
+    value: "mokexapp.info"
+  - type: domain-suffix
+    value: "mokexapp.cz"
+  - type: domain-suffix
+    value: "bnappweb.black"
+  - type: domain-suffix
+    value: "bnappweb.academy"
+  - type: domain-suffix
+    value: "bnappweb.biz"
+  - type: domain-suffix
+    value: "bnappweb.blue"
+  - type: domain-suffix
+    value: "bnappweb.cc"
+  - type: domain-suffix
+    value: "bnappweb.club"
+  - type: domain-suffix
+    value: "bnappweb.co"
+  - type: domain-suffix
+    value: "binancewv.co"
+  - type: domain-suffix
+    value: "binancewv.mobi"
+  - type: domain-suffix
+    value: "binancewv.ninja"
+  - type: domain-suffix
+    value: "binancewv.club"
+  - type: domain-suffix
+    value: "binancewv.link"
+  - type: domain-suffix
+    value: "binancewv.biz"
+  - type: domain-suffix
+    value: "binancewv.info"
+  - type: domain-suffix
+    value: "binancewv.net"
+  - type: domain-suffix
+    value: "sintral.io"
+  - type: domain-suffix
+    value: "sintral.me"
+  - type: domain-suffix
+    value: "asterapp.me"
+  - type: domain-suffix
+    value: "liquidmesh.net"
+  - type: domain-suffix
+    value: "1stdigital.com"
+  - type: domain-keyword
+    value: "binance"

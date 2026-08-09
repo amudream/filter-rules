@@ -1,0 +1,6 @@
+name: ChinaTLD
+target: DIRECT
+description: "Lightweight .cn fallback."
+rules:
+  - type: domain-suffix
+    value: "cn"
