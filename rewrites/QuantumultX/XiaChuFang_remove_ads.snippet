@@ -1,0 +1,26 @@
+# 下厨房去广告 - Quantumult X
+# 移除开屏广告、页面推广及横幅，精简首页标签。
+# Upstream: https://kelee.one/Tool/Loon/Plugin/XiaChuFang_remove_ads.plugin
+# Mirror used for conversion: https://github.com/Moli-X/Tool/blob/X/Loon/Plugin/Kelee/XiaChuFang_remove_ads.plugin
+# Upstream date: 2026-06-01 17:11:35
+# Converted for Quantumult X: 2026-08-21
+# Requires Quantumult X with jsonjq-response-body support (v1.5.2 build 845+).
+
+# 开屏 / 广告接口
+^https:\/\/api\.xiachufang\.com\/v2\/ad\/ url reject-dict
+
+# 首页瀑布流广告
+^https:\/\/api\.xiachufang\.com\/v2\/homepage\/paged_waterfall_recommendations\.json$ url jsonjq-response-body 'del(.multiplex_cells[] | select(.recommendation_cell.impression_sensor_events[]?.properties.target_type? == "ad"))'
+
+# 配置中的广告字段
+^https:\/\/api\.xiachufang\.com\/v2\/config\/get\.json$ url jsonjq-response-body 'del(.content.recipe_ad, .content.splash_ad_req_time, .content.splash_sdk_ad_req_time, .content.splash_ad_lifecycle_interval, .content.waterfall_ad_feedback, .content.homepage_waterfall_test_ad_pos, .content.ad_app_look_around, .content.ad_sdk_text_removal_keywords)'
+
+# Feed / 首页旧接口 / 贴纸任务
+^https:\/\/api\.xiachufang\.com\/v2\/account\/feeds_v7\.json url reject-dict
+^https:\/\/api\.xiachufang\.com\/v2\/homepage1810\/init_page\.json url reject-dict
+^https:\/\/api\.xiachufang\.com\/v2\/mark_mission\/get_sticker_info\.json url reject-dict
+
+# 排行榜页面：移除侧滑活动与菜品广场单元
+^https:\/\/api\.xiachufang\.com\/v2\/homepage\/ranking_list\/paged_homepage_ranking_list_section_v2\.json$ url jsonjq-response-body '.cells |= map(del(.side_slip_activity_cell, .dish_square_cell))'
+
+hostname = api.xiachufang.com
